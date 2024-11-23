@@ -6,36 +6,34 @@ using System.Threading.Tasks;
 
 namespace Final_Assignment__Group_Project_
 {
-    internal class Customer
+    public class Customer
     {
         public int Id { get; private set; }
-        public string First { get; private set; }
-        public string Last { get; private set; }
-        public string Contact { get; private set; }
-        public int BookingCount { get; private set; }
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string Phone { get; private set; }
+        public int BookingsCount { get; set; } // tracking the # of booking
 
-        public Customer(int id, string first, string last, string contact)
+        public Customer(int id, string firstName, string lastName, string phone)
         {
             Id = id;
-            First = first;
-            Last = last;
-            Contact = contact;
-            BookingCount = 0;
+            FirstName = firstName;
+            LastName = lastName;
+            Phone = phone;
+            BookingsCount = 0;  // 0 is default booking
         }
 
-        public static bool IsDuplicate(Customer[] customers, string first, string last, string contact)
+        public void MakeBooking()
         {
-            foreach (var customer in customers)
+            BookingsCount++;
+        }
+
+        public void CancelBooking()
+        {
+            if (BookingsCount > 0)
             {
-                if (customer != null && customer.First == first && customer.Last == last && customer.Contact == contact)
-                    return true;
+                BookingsCount--;
             }
-            return false;
-        }
-
-        public void ShowInfo()
-        {
-            Console.WriteLine($"Customer {Id}: {First} {Last}, Contact: {Contact} | Bookings: {BookingCount}");
         }
     }
 }

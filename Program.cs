@@ -1,58 +1,74 @@
-﻿using System;
+﻿using Final_Assignment__Group_Project_;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Final_Assignment__Group_Project_;
 
 namespace Final_Assignment__Group_Project_
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
 
-            //AirlineManager manager = new AirlineManager(5, 5, 5);
+            FlightManager Fm = new FlightManager(10);
+            CustomerManager customerManager = new CustomerManager();
+            BookingManager bookingManager = new BookingManager(10);
 
-            //manager.AddFlight(1001, "New York", "Los Angeles", 150);
-            //manager.AddFlight(1002, "Chicago", "Miami", 200);
+            // Create a Flight object
+            Flight flight = new Flight(1, "New York", "Los Angeles", 100);
 
-            //manager.AddCustomer("John", "Doe", "123-456-7890");
-            //manager.AddCustomer("Jane", "Smith", "987-654-3210");
+            // Create an array of Customers and populate it
+            Customer[] customers = new Customer[3];
+            customers[0] = new Customer(1, "John", "Doe", "123-456-7890");
+            customers[1] = new Customer(2, "Jane", "Smith", "098-765-4321");
+            customers[2] = new Customer(3, "Alice", "Johnson", "555-555-5555");
 
-            //manager.MakeBooking(1, 1001);  // Booking for customer 1 on flight 1001
-            //manager.MakeBooking(2, 1002);  // Booking for customer 2 on flight 1002
 
+            bool exit = false;
 
-            //manager.ShowAllFlights();
-            //manager.ShowAllCustomers();
-            //manager.ShowAllBookings();
+            while (!exit)
+            {
+                Console.Clear();
+                Console.WriteLine("Welcome to the Flight Management System");
+                Console.WriteLine("Please choose an option:");
+                Console.WriteLine("1.  Customer");
+                Console.WriteLine("2.  Booking");
+                Console.WriteLine("3.  Flights");
+                Console.WriteLine("4. Exit");
 
-            //manager.CancelBooking(1);  // Cancel booking 1
-            //manager.ShowAllBookings();  // View bookings after cancellation
+                string choice = Console.ReadLine();
+                Console.Clear();
 
-            //Console.WriteLine("\nPress any key to exit...");
-
-            FlightManager flightManager = new FlightManager();
-
-            // Adding flights
-            flightManager.AddFlight(101, "New York", "London", 150);
-            flightManager.AddFlight(102, "Paris", "Tokyo", 200);
-
-            // Viewing all flights
-            flightManager.ListFlights();
-
-            // Viewing details of a specific flight
-            flightManager.ViewFlightDetails(101);
-
-            // Attempt to delete a flight with booked passengers
-            flightManager.DeleteFlight(101);  // Shouldn't allow if there are bookings
-
-            // Deleting a flight with no passengers
-            flightManager.DeleteFlight(102);  // Should succeed if no bookings
-
-            Console.ReadLine();
-            Console.ReadKey();
-
+                switch (choice)
+                {
+                    case "1":
+                        customerManager.ShowCustomerMenu();
+                        break;
+                    case "2":
+                        bookingManager.ShowBookingMenu(flight, customers);
+                        break;
+                    case "3":
+                        Fm.ShowFlightMenu();
+                        break;
+                    case "4":
+                        exit = true;
+                        break;
+                    case "":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+                // if (!exit)
+                { 
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                }
+            }
         }
     }
 }
