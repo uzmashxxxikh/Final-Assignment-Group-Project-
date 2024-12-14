@@ -1,4 +1,4 @@
-**JavaFX Human Resource Management and Payroll System (Group-Project)
+# **JavaFX Human Resource Management and Payroll System (Group-Project)
 Group Assignment for 2130**
 
 This project involves the development of a comprehensive Human Resource Management (HRM) and Payroll System using JavaFX. 
@@ -6,7 +6,7 @@ This application will enable HR personnel to manage employee records, handle pay
 It will challenge your skills in GUI development, data management, object-oriented programming, and financial calculations within a software application.
 
 
-Objectives:
+# Objectives:
 	• Develop an advanced JavaFX application for HR management and payroll processing.
 	• Implement robust object-oriented design for managing employee data.
 	• Create a payroll calculator to process and generate employee payrolls.
@@ -14,7 +14,7 @@ Objectives:
 	• Incorporate features for generating detailed payroll reports.
 
  
-Application Specifications
+# Application Specifications
 	• GUI Design: Design a user-friendly JavaFX interface with sections for employee management, payroll processing, and reporting.
 	• Data Models: Develop classes such as Employee, Payroll, Department, etc., with relevant attributes and methods.
 	• Employee Management: Include features to add, update, view, and delete employee records.
