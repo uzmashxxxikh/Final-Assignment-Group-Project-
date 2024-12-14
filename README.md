@@ -1,5 +1,5 @@
-JavaFX Human Resource Management and Payroll System (Group-Project)
-Group Assignment for 2130
+**JavaFX Human Resource Management and Payroll System (Group-Project)
+Group Assignment for 2130**
 
 This project involves the development of a comprehensive Human Resource Management (HRM) and Payroll System using JavaFX. 
 This application will enable HR personnel to manage employee records, handle payroll calculations, and generate payroll reports. 
